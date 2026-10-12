@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: railform
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/ready
+    numInstances: 1
+    autoDeployTrigger: checksPass
+    disk:
+      name: railform-data
+      mountPath: /app/runtime
+      sizeGB: 1
+    envVars:
+      - key: RAILFORM_ENV
+        value: production
+      - key: RAILFORM_ACCESS_TOKEN
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: OPENAI_DAILY_REQUEST_LIMIT
+        value: "20"
+      - key: RAILFORM_DB
+        value: sqlite:////app/runtime/railform.db

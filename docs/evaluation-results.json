@@ -1,0 +1,59 @@
+{
+  "baseline": {
+    "tp": 2,
+    "fp": 3,
+    "fn": 3,
+    "precision": 0.4,
+    "recall": 0.4,
+    "f1": 0.4000000000000001,
+    "false_alarms_per_km": 1.0227272727272727,
+    "localization_error": 0.033854166666685614,
+    "delay": 0.09992187499999972,
+    "latency": 0.016942086395746712
+  },
+  "implemented": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 2,
+    "precision": 1.0,
+    "recall": 0.6,
+    "f1": 0.7499999999999999,
+    "false_alarms_per_km": 0.0,
+    "localization_error": 0.04861111111111427,
+    "delay": 0.2999218749999999,
+    "latency": 3.5455898034011955
+  },
+  "classification": {
+    "correct": 3,
+    "matched": 3
+  },
+  "protocol": {
+    "runs": 8,
+    "training_seeds": [
+      11,
+      12,
+      13
+    ],
+    "held_out_seeds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "split": "By run seed, before windowing. One run per preset; small illustrative test, not a generalization estimate.",
+    "matching_tolerance_m": 25,
+    "matching": "One-to-one, nearest eligible event; wheel and quality observations excluded from track-event predictions.",
+    "baseline": "Raw absolute acceleration > 1 m/s\u00b2; 0.65 hysteresis, 0.45 s cooldown.",
+    "observed_km": 2.9333333333333336,
+    "detector": "rf-causal-1.0.0",
+    "date": "2026-10-12T16:56:44.254811+00:00",
+    "window_s": 0.4,
+    "hop_s": 0.1,
+    "classification": "Conditional accuracy on matched track events only; misses reported separately.",
+    "negative_count": "Not defined for event matching; no true-negative claims."
+  }
+}

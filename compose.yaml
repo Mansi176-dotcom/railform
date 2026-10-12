@@ -1,0 +1,9 @@
+services:
+  railform:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - railform-data:/app/runtime
+volumes:
+  railform-data:
