@@ -19,3 +19,4 @@ jobs:
       - run: python -m pytest -q
       - run: npm ci --prefix frontend
       - run: npm run build --prefix frontend
+      - run: docker build -t railform:ci .
